@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .output {
+            margin-top: 30px;
+            margin-left: 100px;
+            width: 90vw;
+            height: 20vh;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #color {
+            border: 3px solid black;
+            width: 20vw;
+        }
+
+        #R,
+        #G,
+        #B {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        #showingColor {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            margin-right: 15px;
+        }
+    </style>
+    <div>
+        <h1>All Questions</h1>
+    </div>
+    <h1>Add New Question</h1>
+    Question <br><input type="text">
+    <br>
+    Correct Answer<br><input type="text">
+    <br>
+    Wrong Answer<br><input type="text">
+    <br><br><button type="submit">SUBMIT</button>
+
+    <script>
+        let inputs = document.querySelectorAll("input")
+        let divv = document.querySelector("div")
+        let butt = document.querySelector("button").addEventListener("click",function() {
+            let h1Q = document.createElement("p")
+            let h1C = document.createElement("p")
+            let h1W = document.createElement("p")
+                h1Q.append("Question: "+`${inputs[0].value}`)
+                h1C.append("Correct Answer: "+`${inputs[1].value}`)
+                h1W.append("Wrong Answer: "+`${inputs[2].value}`)
+                divv.append(h1Q)            
+                divv.append(h1C)            
+                divv.append(h1W)            
+        })
+    </script>
+
+</body>
+
+</html>
